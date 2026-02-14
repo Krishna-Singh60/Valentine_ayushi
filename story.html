@@ -55,4 +55,36 @@ function openImg(src){document.getElementById('modalImg').src=src;new bootstrap.
 <script src="js/petals.js"></script>
 <script src="js/script.js"></script>
 <script src="js/music.js"></script>
-</body></html>
+<script>
+// ===== AUTO STORY SCROLL (30 sec cinematic scroll) =====
+(function(){
+
+  const totalDuration = 30000; // 30 seconds
+  let start = null;
+  let scrolling = false;
+
+  function step(timestamp){
+    if(!start) start = timestamp;
+
+    const progress = Math.min((timestamp - start) / totalDuration, 1);
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+    window.scrollTo(0, maxScroll * progress);
+
+    if(progress < 1 && scrolling){
+      requestAnimationFrame(step);
+    }
+  }
+
+  function startScroll(){
+    if(scrolling) return;
+    scrolling = true;
+    requestAnimationFrame(step);
+  }
+
+  // start after first interaction (needed for mobile browsers)
+  document.addEventListener("click", startScroll, { once:true });
+  document.addEventListener("touchstart", startScroll, { once:true });
+
+})();
+</script>
