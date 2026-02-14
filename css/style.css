@@ -1,0 +1,54 @@
+.bg-valentine{background:linear-gradient(135deg,#ffdde1,#ee9ca7);min-height:100vh}
+
+.game-area{width:280px;height:160px}
+
+@media (min-width:768px){
+.game-area{width:400px;height:200px}
+}
+
+.pulse{animation:pulse 1.5s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+.heart{position:fixed;bottom:-20px;animation:float 6s linear;color:red;font-size:20px}
+@keyframes float{to{transform:translateY(-100vh);opacity:0}}
+
+.confetti{position:fixed;top:0;width:8px;height:8px;background:red;animation:fall 3s linear}
+@keyframes fall{to{transform:translateY(100vh) rotate(720deg)}}
+
+h1,h2,h3,p{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.25)}
+
+body{font-family:Poppins,sans-serif}
+
+h1,h2{font-family:'Great Vibes',cursive;letter-spacing:1px}
+
+.bg-valentine{
+background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.25)),url('../img/bg.jpg') center/cover fixed;
+}
+
+.container, .modal-content{
+backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+padding:20px;
+}
+
+.petal{
+position:fixed;
+top:-20px;
+width:14px;
+height:14px;
+background:pink;
+border-radius:50% 50% 50% 0;
+transform:rotate(45deg);
+animation:fallPetal linear forwards;
+opacity:.8;
+}
+
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
+.photo-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;cursor:pointer;transition:.3s}
+.photo-grid img:hover{transform:scale(1.05)}
+.timeline-title{margin-top:30px;font-family:'Great Vibes',cursive;color:#fff}
+.caption{opacity:.9;margin:10px 0 25px;text-align:center}
+.subtitle{opacity:.85}
+
+@keyframes fallPetal{to{transform:translateY(110vh) rotate(360deg);opacity:0}}

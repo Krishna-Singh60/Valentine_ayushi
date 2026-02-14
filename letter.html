@@ -1,0 +1,51 @@
+
+<!DOCTYPE html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.story-letter{max-width:700px;margin:auto;font-size:1.15rem;line-height:1.8;padding:40px}
+</style>
+</head>
+<body class="bg-valentine">
+<div id="scrollContainer" class="story-letter text-white">
+<h2 class="text-center mb-4">For You ❤️</h2>
+<p>
+I don’t know when you stopped being a person
+and started becoming my habit.
+
+Some days we laugh,
+some days we overthink,
+some days we just stay quiet together.
+But in every version of us —
+I still choose you.
+
+Distance didn’t reduce love,
+it made me realize how important you are.
+
+You’re not the best girl in the world,
+you’re just the one my heart feels safe with.
+And that’s rarer than perfection.
+
+So even on days we fight,
+or misunderstand each other —
+I never want a life where you’re not in it.
+
+If loving you is emotional,
+then I never want to be mature.
+</p>
+<h4 class="text-center mt-5">Happy Valentine’s Day ❤️<br>—> Love ❤️ Krishna <—</h4>
+</div>
+<script>
+let duration=30000;
+let start=null;
+function autoScroll(ts){
+ if(!start)start=ts;
+ let progress=(ts-start)/duration;
+ window.scrollTo(0,document.body.scrollHeight*progress);
+ if(progress<1)requestAnimationFrame(autoScroll);
+}
+requestAnimationFrame(autoScroll);
+</script>
+</body></html>
